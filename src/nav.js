@@ -28,8 +28,10 @@ export default function Navbar() {
 
 
       <div className='flex w-[40%] '>
-      <button className='mr-20 w-[24%] rounded-full bg-[#6b9855] border-white border-2 flex px-8 py-3 '><span class="elementor-button-icon elementor-align-icon-left">
-      <svg className='mr-4' xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 25 25" width="18"><g id="Layer_13" data-name="Layer 13"><path fill="white" d="m30 7a1 1 0 0 1 -1 1h-26a1 1 0 0 1 0-2h26a1 1 0 0 1 1 1zm-5 8h-22a1 1 0 0 0 0 2h22a1 1 0 0 0 0-2zm-9 9h-13a1 1 0 0 0 0 2h13a1 1 0 0 0 0-2z"></path></g></svg>			</span>MENU</button>
+      <button className='mr-20 lg:w-[26%] rounded-full bg-[#6b9855] border-white border-2 flex px-8 py-4  ' onClick={toggleMenu}><span class="elementor-button-icon elementor-align-icon-left">
+     
+      <svg className='mr-4' xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 25 25" width="18"><g id="Layer_13" data-name="Layer 13"><path fill="white" d="m30 7a1 1 0 0 1 -1 1h-26a1 1 0 0 1 0-2h26a1 1 0 0 1 1 1zm-5 8h-22a1 1 0 0 0 0 2h22a1 1 0 0 0 0-2zm-9 9h-13a1 1 0 0 0 0 2h13a1 1 0 0 0 0-2z"></path></g></svg>			</span> <span className='sm:hidden'> MENU</span></button>
+     
       <Link to="/" >   <img
  src="https://partners-dp.com/wp-content/uploads/2023/10/cropped-1000x1000px-15.png"
  alt="logo"
@@ -48,22 +50,20 @@ export default function Navbar() {
       </ul>
       </div>
       {/* Hamburger Icon */}
-      <div className="md:hidden cursor-pointer" onClick={toggleMenu}>
+      {/* <div className="md:hidden cursor-pointer" onClick={toggleMenu}>
         {isOpen ? <HiX size={30} /> : <HiMenu size={30} />}
-      </div>
+      </div> */}
 
       {/* Mobile Menu */}
       {isOpen && (
-        <ul className="absolute top-16 right-4 bg-transperant shadow-lg p-4 w-48 space-y-2 text-[16px] font-[200] font-sen cursor-pointer md:hidden">
+        <ul className="absolute top-16 left-4 bg-[#006400] text-white shadow-lg p-4 w-[100%] h-screen space-y-2 text-[16px] font-[200] font-sen cursor-pointer md:hidden">
           <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
-          <li><Link to="/about2" onClick={toggleMenu}>About Us</Link></li>
-          <li><Link to="/products" onClick={toggleMenu}>Product</Link></li>
+          <li><Link to="/" onClick={toggleMenu}>+383 45 838 384</Link></li>
+          <li><Link to="/" onClick={toggleMenu}><MdOutlinePlayArrow /></Link></li>
       
-          <li><Link to="/case" onClick={toggleMenu}>Case Studies</Link></li>
-          <li><Link to="/faq" onClick={toggleMenu}>FAQ</Link></li>
-          {/* <li><Link to="/safety" onClick={toggleMenu}>Safety & Ethics</Link></li> */}
-          <li><Link to="/training" onClick={toggleMenu}>Training Program</Link></li>
-          <li ><Link to="/contact" onClick={toggleMenu}>Contact Us</Link></li>
+          <li><Link to="/" onClick={toggleMenu}>3D</Link></li>
+          <li><Link to="/" onClick={toggleMenu}><CiSearch /></Link></li>
+          <li><Link to="/" onClick={toggleMenu}><FiPhoneCall /></Link></li>
         </ul>
       )}
     </div>
