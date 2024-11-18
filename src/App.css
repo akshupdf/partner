@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Sen:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=MonteCarlo&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sen:wght@400..800&display=swap');
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+
+body::-webkit-scrollbar {
+    display: none;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .bg-box {
+    position: relative;
+    flex: 1;
+    overflow: hidden; 
+    border: 1px solid white; 
   }
-  to {
-    transform: rotate(360deg);
+
+  .bg-box2 {
+    position: relative;
+    flex: 1;
+    overflow: hidden; 
+    border: 1px solid white; 
   }
+  
+  .bg-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    scale: 1.2;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 1s;
+    z-index: 0;
+    cursor: pointer;
+  }
+
+  .bg-box2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    scale: 1.2;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 1s;
+    z-index: 0;
+    cursor: pointer;
+  }
+  
+  /* Add background images */
+  .bg-box:nth-child(1)::before {
+    background-image: url('https://partners-dp.com/wp-content/uploads/2023/11/DP_Foto-4-scaled.jpg');
+  }
+
+  .bg-box:nth-child(2)::before {
+    background-image: url('https://partners-dp.com/wp-content/uploads/2024/10/12.jpg');
+  }
+  
+  .bg-box:nth-child(3)::before {
+    background-image: url('https://partners-dp.com/wp-content/uploads/2023/10/1-1-scaled.jpg');
+  }
+
+  .bg-box2:nth-child(1)::before {
+    background-image: url('https://partners-dp.com/wp-content/uploads/2023/11/DPPartners-0616-scaled.jpg');
+  }
+
+  .bg-box2:nth-child(2)::before {
+    background-image: url('https://partners-dp.com/wp-content/uploads/2024/05/DZH-19-scaled.jpg');
+  }
+  
+  .bg-box2:nth-child(3)::before {
+    background-image: url('https://partners-dp.com/wp-content/uploads/2023/11/viber_image_2023-09-28_11-06-18-137.jpg');
+  }
+
+  .bg-box2:nth-child(4)::before {
+    background-image: url('https://partners-dp.com/wp-content/uploads/2023/11/DP-Partners-9912-scaled.jpg');
+  }
+  
+  
+  .bg-box:hover::before {
+    transform: scale(0.9); /* Zoom out effect */
+  }
+
+  .bg-box2:hover::before {
+    transform: scale(0.9); /* Zoom out effect */
+  }
+  
+  /* .bg-box span {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    display: block;
+    padding: 20px;
+    pointer-events: none; 
+  } */
+  
+  /* Optional: Add padding to prevent layout issues */
+  .bg-box:first-child {
+    padding: 0; /* Ensure no default padding exists */
+    margin: 0;
+  }
+
+  .st0 {
+    fill: transparent; 
+    transition: fill 0.3s ease; 
+  }
+  
+
+
+  svg polygon.st0:hover,
+svg path.st0:hover {
+  cursor: pointer;
+  fill: rgba(0, 255, 0, 0.6); /* Light green when hovered */
+}
+
+/* Available state */
+.available {
+  fill: rgba(0, 128, 0, 0.6); /* Green */
+}
+
+/* Hover for available */
+.available:hover {
+  fill: rgba(0, 255, 0, 0.8); /* Brighter green on hover */
+}
+
+/* Unavailable state */
+.unavailable {
+  fill: rgba(255, 0, 0, 0.6); /* Red */
+}
+
+/* Hover for unavailable */
+.unavailable:hover {
+  fill: rgba(255, 50, 50, 0.8); /* Brighter red on hover */
 }
